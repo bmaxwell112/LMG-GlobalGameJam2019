@@ -4,29 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class QuestionController : MonoBehaviour {
-bool[] questions = {People, Fire, Spaces, Heights};
 public static bool People, Fire, Spaces, Heights;
-private bool currentBoolean;
+private bool shown = false;
+//testing boolean
 private int arrayValue;
 private Image QuestionImage;
 public Sprite image1, image2, image3, image4;
 
 	// Use this for initialization
 	void Start () {
-
 		arrayValue = 0;
 		QuestionImage = FindObjectOfType<currentimage>().GetComponent<Image>();
-		SetCurrentBoolean(questions[0]);
+		SetCurrentQuestion();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		SetCurrentQuestion();
-	}
-
-	void SetCurrentBoolean(bool question)
-	{
-		question = currentBoolean;
+		NextScene();
 	}
 
 	void SetCurrentQuestion()
@@ -43,7 +37,7 @@ public Sprite image1, image2, image3, image4;
 			break;
 			
 			case 2:
-			QuestionImage.sprite = image3;		
+			QuestionImage.sprite = image3;	
 			break;
 
 			case 3:
@@ -56,37 +50,62 @@ public Sprite image1, image2, image3, image4;
 		}
 	}
 
+	void SetGoodOrBad(bool ButtonPressed)
+	{
+		switch (arrayValue)
+		{
+			case 0:
+			People = ButtonPressed;
+			break;
+
+			case 1:
+			Fire = ButtonPressed;
+			break;
+			
+			case 2:
+			Spaces = ButtonPressed;
+			break;
+
+			case 3:
+			Heights = ButtonPressed;
+			break;
+
+			default:
+			print("No question");
+			break;
+		}
+	}
+
+
 	public void Good()
 	{
-		currentBoolean = true;
-		if(arrayValue < 3)
+		if(arrayValue < 4)
 		{
+		SetGoodOrBad(true);
 		arrayValue++;
-		SetCurrentBoolean(questions[arrayValue]);
-		}
-		else
-		{
-			NextScene();
+		SetCurrentQuestion();
 		}
 
 	}
 
 	public void Bad()
 	{
-		currentBoolean = false;
-		if(arrayValue < 3)
+		if(arrayValue < 4)
 		{
+		SetGoodOrBad(false);
 		arrayValue++;
-		SetCurrentBoolean(questions[arrayValue]);
-		}
-		else
-		{
-			NextScene();
+		SetCurrentQuestion();
 		}
 	}
 
 	void NextScene()
 	{
-		print(questions[0]);
+
+		if(arrayValue == 4 && !shown)
+		{
+		print(People + " " + Fire + " " + Spaces + " " + Heights);
+		shown = true;
+		}
+
 	}
 }
