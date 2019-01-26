@@ -1,31 +1,14 @@
 fileFormatVersion: 2
-guid: aa1aa3c12a0a9024f89d75cce7cd32ca
+guid: cd88036f63c0a4d6b99bc4800a7c680c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Bed
-    100004: Blanket
-    100006: Pillow
     400000: //RootNode
-    400002: Bed
-    400004: Blanket
-    400006: Pillow
-    2100000: unnamed
-    2100002: Material
-    2100004: Material_002
-    2100006: Bed
-    2100008: Material_001
-    2100010: Frame
-    2300000: Bed
-    2300002: Blanket
-    2300004: Pillow
-    3300000: Bed
-    3300002: Blanket
-    3300004: Pillow
-    4300000: Pillow
-    4300002: Bed
-    4300004: Blanket
+    2100000: Material
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Tree02
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
