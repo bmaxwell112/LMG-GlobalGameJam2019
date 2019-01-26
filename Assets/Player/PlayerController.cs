@@ -36,10 +36,10 @@ public class PlayerController : MonoBehaviour {
 
     void MoveWithCam()
     {
-
+        print(InputController.vMove);
         if(InputController.vMove > 0)
-        {
-            transform.position += Camera.main.transform.forward * (Time.deltaTime * Speed);
+        {            
+            transform.position += Camera.main.transform.forward * (Time.deltaTime * Speed);    
         }
 
         if(InputController.vMove < 0)
@@ -58,7 +58,10 @@ public class PlayerController : MonoBehaviour {
         {
             transform.Rotate(-Vector3.up, TurnSpeed * Time.deltaTime);
         }
-
+        // Keeps player frop tipping      
+        Quaternion newRot = Quaternion.identity;
+        newRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+        transform.rotation = newRot;
     }
 
 
