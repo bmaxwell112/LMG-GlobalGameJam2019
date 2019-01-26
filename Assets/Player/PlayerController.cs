@@ -6,12 +6,19 @@ public class PlayerController : MonoBehaviour {
 
     public float Speed = 1f;
     public float TurnSpeed = 100f;
+    public float interactRange = 5f;
     private Rigidbody rb;
+
+    private int layerMask;
 
    //private Transform groundChecker;
     // Use this for initialization
     void Start()
     {
+        layerMask = 1 << 8;
+        layerMask = ~layerMask;
+
+
         rb = GetComponent<Rigidbody>();
         InputController.hiding = false;
     }
@@ -27,6 +34,7 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        CheckInteraction();
         ApplyGravity();
 
     }
@@ -62,6 +70,19 @@ public class PlayerController : MonoBehaviour {
         Quaternion newRot = Quaternion.identity;
         newRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
         transform.rotation = newRot;
+    }
+
+    void CheckInteraction()
+    {
+        RaycastHit hit;
+
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, interactRange, layerMask))
+        {
+            if(hit.transform.tag == "Interact" && Input.GetButtonUp("Interact"))
+            {
+                print("I used the object.");
+            }
+        }
     }
 
 }
