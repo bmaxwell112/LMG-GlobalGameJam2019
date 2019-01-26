@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour {
 
     public float Speed = 1f;
     public float TurnSpeed = 100f;
-
     private Rigidbody rb;
 
    //private Transform groundChecker;
@@ -14,12 +13,16 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        InputController.hiding = false;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if(!InputController.hiding)
+        {
         MoveWithCam();
+        }
     }
 
     private void FixedUpdate()
@@ -46,8 +49,6 @@ public class PlayerController : MonoBehaviour {
             transform.position += new Vector3(-Camera.main.transform.forward.x, 0, -Camera.main.transform.forward.z) * (Time.deltaTime * Speed);
         }
 
-        //make these work relative to the camera!!
-
         if(InputController.hMove > 0)
         {
            transform.Rotate(Vector3.up, TurnSpeed * Time.deltaTime);
@@ -57,14 +58,10 @@ public class PlayerController : MonoBehaviour {
         {
             transform.Rotate(-Vector3.up, TurnSpeed * Time.deltaTime);
         }
-        // Keeps player frop tipping      
+        // Keeps player from tipping      
         Quaternion newRot = Quaternion.identity;
         newRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
         transform.rotation = newRot;
     }
-
-
-
-
 
 }
