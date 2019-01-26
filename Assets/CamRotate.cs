@@ -33,5 +33,9 @@ public class CamRotate : MonoBehaviour {
 		{
 			transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 		}
+		if(Input.GetKey(KeyCode.S))
+		{
+			transform.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
+		}
 	}
 }
