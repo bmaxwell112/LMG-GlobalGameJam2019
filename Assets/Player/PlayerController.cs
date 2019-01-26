@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour {
 
     void MoveWithCam()
     {
-        print(InputController.vMove);
         if(InputController.vMove > 0)
         {            
             transform.position += Camera.main.transform.forward * (Time.deltaTime * Speed);    
