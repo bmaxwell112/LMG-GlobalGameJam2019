@@ -6,24 +6,19 @@ public class SceneTransition : MonoBehaviour {
 	public float fadeInTime;
 	
 	private Image fadePanel;
-	private Color currentColor = Color.black;
+	private Color currentColor;
 	
-
 	// Use this for initialization
 	void Start () {
+		currentColor = Color.black;
 		fadePanel = GetComponent<Image>();		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.timeSinceLevelLoad < fadeInTime){
-			//fade in
-			float alphaChange = Time.deltaTime / fadeInTime;
-			currentColor.a -= alphaChange;
-			fadePanel.color = currentColor;
-		} else {
-			// deactivate panel
-			gameObject.SetActive (false);
-		}
+
+		float alphaChange = Time.deltaTime / fadeInTime;
+		currentColor.a -= alphaChange;
+		fadePanel.color = currentColor;
 	}
 }
