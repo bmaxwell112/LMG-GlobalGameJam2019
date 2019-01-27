@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Toggler : MonoBehaviour {
 
+	AudioSource audioSource;
+	[SerializeField] AudioClip good, bad;
 	[SerializeField] bool fire;
 	[SerializeField] GameObject[] fireChangeSetBad;
 	[SerializeField] GameObject[] fireChangeSetGood;
@@ -26,6 +28,7 @@ public class Toggler : MonoBehaviour {
 	[SerializeField] GameObject[] warthChangeSetGood;
 	bool[] check = new bool[5];
 	bool hiding;
+	
 
 	void Start()
 	{
@@ -33,15 +36,29 @@ public class Toggler : MonoBehaviour {
 		heights = QuestionController.Heights;
 		people = QuestionController.People;
 		space = QuestionController.Spaces;
+		audioSource = GetComponent<AudioSource>();
+		audioSource.clip = bad;
+		audioSource.Play();
 		ChangeScene();
 	}
 
 	void Update(){
+		transform.position = Camera.main.transform.position;
 		if(DetectBoolChange()){
 			ChangeScene();
 		}
 		if(hiding != InputController.hiding)
 		{
+			if(InputController.hiding)
+			{
+				audioSource.clip = good;
+				audioSource.Play();
+			}
+			else
+			{
+				audioSource.clip = bad;
+				audioSource.Play();
+			}
 			fire = !fire;
 			heights = !heights;
 			people = !people;
@@ -69,6 +86,16 @@ public class Toggler : MonoBehaviour {
 			Active(heightChangeSetGood);
 			InActive(heightChangeSetBad);
 			CheckSpace();
+		}
+		if(!people)
+		{
+			Active(peopleChangeSetBad);
+			InActive(peopleChangeSetGood);
+		}
+		else
+		{
+			Active(peopleChangeSetGood);
+			InActive(peopleChangeSetBad);
 		}
     }
 
