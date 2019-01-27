@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: eb529709cf2a141d29011a95369a92dc
+guid: b4bd4aa08ce57412694e6a2d2bd54c66
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: unnamed
-    2100002: Skin
-    2100004: Material_001
+    2100000: Skin
+    2100002: Material_001
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube_001

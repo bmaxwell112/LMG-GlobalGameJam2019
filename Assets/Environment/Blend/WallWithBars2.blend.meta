@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: eb529709cf2a141d29011a95369a92dc
+guid: ee9c3416b284bdc47880795ed7e9b023
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: unnamed
-    2100002: Skin
-    2100004: Material_001
+    2100000: PlaceHolder
+    2100002: Wall
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube_001
+    4300000: Cube
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
