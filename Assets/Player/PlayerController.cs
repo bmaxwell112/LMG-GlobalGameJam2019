@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour {
     void MoveWithCam()
     {
         if(InputController.vMove > 0)
-        {            
+        {                        
             transform.position += Camera.main.transform.forward * (Time.deltaTime * Speed);    
         }
 
@@ -81,12 +81,12 @@ public class PlayerController : MonoBehaviour {
     {
         if(InputController.vMove > 0)
         {            
-            transform.Rotate(new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z) * (Time.deltaTime * Speed * 5));
+            Camera.main.transform.Rotate(Vector3.left, TurnSpeed * Time.deltaTime);
         }
 
         if(InputController.vMove < 0)
         {
-            transform.Rotate(new Vector3(-Camera.main.transform.forward.x, 0, -Camera.main.transform.forward.z) * (Time.deltaTime * Speed * 5));
+            Camera.main.transform.Rotate(-Vector3.left, TurnSpeed * Time.deltaTime);
         }
 
         if(InputController.hMove > 0)
