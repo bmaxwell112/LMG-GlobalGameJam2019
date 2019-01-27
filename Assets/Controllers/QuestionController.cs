@@ -106,7 +106,7 @@ public Sprite image1, image2, image3, image4;
 		{
 		print(People + " " + Fire + " " + Spaces + " " + Heights);
 		shown = true;
-		SceneManager.LoadScene("02b Game2");
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 		
 	}

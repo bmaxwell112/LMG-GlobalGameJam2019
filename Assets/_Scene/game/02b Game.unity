@@ -323,6 +323,18 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1789818598467378, guid: 4c15e5a1d6b45884d95640794903ce8d, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261017835282952, guid: 4c15e5a1d6b45884d95640794903ce8d, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762900426965082, guid: 4c15e5a1d6b45884d95640794903ce8d, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c15e5a1d6b45884d95640794903ce8d, type: 2}
   m_IsPrefabAsset: 0
@@ -333,11 +345,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224096801262872054, guid: 7bc848e576f41634c842352550fca3ff,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 224096801262872054, guid: 7bc848e576f41634c842352550fca3ff,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -426,26 +433,6 @@ Prefab:
     - target: {fileID: 224096801262872054, guid: 7bc848e576f41634c842352550fca3ff,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114057612489465972, guid: 7bc848e576f41634c842352550fca3ff,
-        type: 2}
-      propertyPath: fadeInTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114356676209655308, guid: 7bc848e576f41634c842352550fca3ff,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114356676209655308, guid: 7bc848e576f41634c842352550fca3ff,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114356676209655308, guid: 7bc848e576f41634c842352550fca3ff,
-        type: 2}
-      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
