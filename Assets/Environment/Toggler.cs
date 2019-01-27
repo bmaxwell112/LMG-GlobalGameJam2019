@@ -103,11 +103,11 @@ public class Toggler : MonoBehaviour {
     {
         if (!space)
         {
-            heightChangeSetBad[0].SetActive(false);
             heightChangeSetBad[2].SetActive(false);
+			heightChangeSetBad[1].SetActive(false);
             heightChangeSetGood[1].SetActive(false);
 			Active(spaceChangeSetBad);
-			if(heights)
+			if(!heights)
 			{
 				Active(spaceChangeSetBadOutside);
 				InActive(spaceChangeSetBadInside);
