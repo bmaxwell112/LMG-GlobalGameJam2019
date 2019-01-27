@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 
     private int layerMask;
 
+
    //private Transform groundChecker;
     // Use this for initialization
     void Start()
@@ -29,6 +30,10 @@ public class PlayerController : MonoBehaviour {
         if(!InputController.hiding)
         {
         MoveWithCam();
+        }
+        else
+        {
+        LookWithCam();
         }
     }
 
@@ -67,6 +72,34 @@ public class PlayerController : MonoBehaviour {
             transform.Rotate(-Vector3.up, TurnSpeed * Time.deltaTime);
         }
         // Keeps player from tipping      
+        Quaternion newRot = Quaternion.identity;
+        newRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+        transform.rotation = newRot;
+    }
+
+        void LookWithCam()
+    {
+        if(InputController.vMove > 0)
+        {            
+            transform.Rotate(new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z) * (Time.deltaTime * Speed * 5));
+        }
+
+        if(InputController.vMove < 0)
+        {
+            transform.Rotate(new Vector3(-Camera.main.transform.forward.x, 0, -Camera.main.transform.forward.z) * (Time.deltaTime * Speed * 5));
+        }
+
+        if(InputController.hMove > 0)
+        {
+           transform.Rotate(Vector3.up, TurnSpeed * Time.deltaTime);
+        }
+
+        if (InputController.hMove < 0)
+        {
+            transform.Rotate(-Vector3.up, TurnSpeed * Time.deltaTime);
+        }
+
+                // Keeps player from tipping      
         Quaternion newRot = Quaternion.identity;
         newRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
         transform.rotation = newRot;

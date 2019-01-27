@@ -7,6 +7,15 @@ public class InputController : MonoBehaviour {
     public static float hMove, vMove;
     public static bool hiding;
 
+    private Quaternion storedPlayerRotation;
+
+    private PlayerController player;
+
+    private void Start() 
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
+
     private void Update()
     {
         InputCheck();
@@ -32,10 +41,14 @@ public class InputController : MonoBehaviour {
     {
         if(!hiding)
         {
+            storedPlayerRotation.y = player.transform.rotation.y;
+            print(player.transform.rotation.y);
             hiding = true;
+
         }
         else
         {
+            player.transform.rotation = new Quaternion(0, storedPlayerRotation.y, 0, 1);
             hiding = false;
         }
     }
