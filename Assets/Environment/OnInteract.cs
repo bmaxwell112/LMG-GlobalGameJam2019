@@ -7,7 +7,7 @@ public class OnInteract : MonoBehaviour {
 		enum Interactions { button, collect, door }
 
 		[SerializeField] Interactions interactions;
-
+		[SerializeField] Animator anim = null;
 	// Use this for initialization
 	void Start () {
 		
@@ -36,6 +36,8 @@ public class OnInteract : MonoBehaviour {
 			if(TrackHearts.hearts == 2)
 			{
 				//open door
+				anim.SetBool("Open", true);
+				Destroy(gameObject);
 			}
 		}
 	}
