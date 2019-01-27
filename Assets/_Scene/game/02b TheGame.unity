@@ -853,12 +853,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 77d8da1f0c93b41c6bd4cb2ff0cbc3fb, type: 2}
-  m_TreeDistance: 2000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
+  m_TreeDistance: 110
+  m_TreeBillboardDistance: 29
+  m_TreeCrossFadeLength: 2
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 85
-  m_DetailObjectDensity: 1
+  m_DetailObjectDistance: 30
+  m_DetailObjectDensity: 0.499
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -3579,6 +3579,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23471028755813938, guid: d75aa4803390fca459abd7f16a75fcd5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ce5f3f03f72b894796d17f6cce8a132, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75aa4803390fca459abd7f16a75fcd5, type: 2}
   m_IsPrefabAsset: 0
@@ -6628,6 +6633,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23471028755813938, guid: d75aa4803390fca459abd7f16a75fcd5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ce5f3f03f72b894796d17f6cce8a132, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75aa4803390fca459abd7f16a75fcd5, type: 2}
   m_IsPrefabAsset: 0
