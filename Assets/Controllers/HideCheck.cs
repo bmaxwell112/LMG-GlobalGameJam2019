@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class HideCheck : MonoBehaviour {
 
-private Text text;
+private Image image;
+
+public Sprite image1;
+public Sprite image2;
 
 	// Use this for initialization
 	void Start () {
-		text = GetComponent<Text>();
+		image = GetComponent<Image>();
 	}
 	
 	// Update is called once per frame
@@ -21,11 +24,11 @@ private Text text;
 	{
 		if(InputController.hiding)
 		{
-			text.text = "Hiding";
+			image.sprite = image1;
 		}
 		else
 		{
-			text.text = "Not hiding";
+			image.sprite = image2;
 		}
 	}
 }
