@@ -9,6 +9,7 @@ public static bool People, Fire, Spaces, Heights;
 private bool shown = false;
 //testing boolean
 private int arrayValue;
+[SerializeField] Button neutral;
 private Image QuestionImage;
 public Sprite image1, image2, image3, image4;
 
@@ -75,6 +76,7 @@ public Sprite image1, image2, image3, image4;
 			print("No question");
 			break;
 		}
+		neutral.Select();
 	}
 
 
