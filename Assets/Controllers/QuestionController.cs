@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuestionController : MonoBehaviour {
 public static bool People, Fire, Spaces, Heights;
@@ -105,7 +106,8 @@ public Sprite image1, image2, image3, image4;
 		{
 		print(People + " " + Fire + " " + Spaces + " " + Heights);
 		shown = true;
+		SceneManager.LoadScene("02b Game2");
 		}
-
+		
 	}
 }
