@@ -6,6 +6,7 @@ using UnityEngine;
 public class Toggler : MonoBehaviour {
 
 	AudioSource audioSource;
+	[SerializeField] Animator animator;
 	[SerializeField] AudioClip good, bad;
 	[SerializeField] bool fire;
 	[SerializeField] GameObject[] fireChangeSetBad;
@@ -43,10 +44,7 @@ public class Toggler : MonoBehaviour {
 	}
 
 	void Update(){
-		transform.position = Camera.main.transform.position;
-		if(DetectBoolChange()){
-			ChangeScene();
-		}
+		
 		if(hiding != InputController.hiding)
 		{
 			if(InputController.hiding)
@@ -65,9 +63,12 @@ public class Toggler : MonoBehaviour {
 			space = !space;
 			hiding = InputController.hiding;
 		}
+		transform.position = Camera.main.transform.position;
+		if(DetectBoolChange()){
+			animator.SetBool("hiding", hiding);
+		}
 	}
-
-    private void ChangeScene()
+    public void ChangeScene()
     {
 		print("running this");
         if(fire)
