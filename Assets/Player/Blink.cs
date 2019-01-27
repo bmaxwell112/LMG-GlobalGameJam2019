@@ -11,6 +11,6 @@ public class Blink : MonoBehaviour {
 
 	public void TriggerChange()
 	{
-		toggler.ChangeScene();
+		toggler.flipScene = true;
 	}
 }

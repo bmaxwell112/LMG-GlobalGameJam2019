@@ -29,6 +29,8 @@ public class Toggler : MonoBehaviour {
 	[SerializeField] GameObject[] warthChangeSetGood;
 	bool[] check = new bool[5];
 	bool hiding;
+	[HideInInspector]
+	public bool flipScene = false;
 	
 
 	void Start()
@@ -66,6 +68,11 @@ public class Toggler : MonoBehaviour {
 		transform.position = Camera.main.transform.position;
 		if(DetectBoolChange()){
 			animator.SetBool("hiding", hiding);
+		}
+		if(flipScene)
+		{
+			ChangeScene();
+			flipScene = false;
 		}
 	}
     public void ChangeScene()
