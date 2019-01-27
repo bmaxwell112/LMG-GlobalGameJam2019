@@ -15,7 +15,7 @@ public class Toggler : MonoBehaviour {
 	[SerializeField] GameObject[] heightChangeSetBad;
 	[SerializeField] GameObject[] heightChangeSetGood;
 	[SerializeField] bool people;
-	[SerializeField] GameObject[] peopleChangeSetBad;
+	[SerializeField] GameObject[] peopleChangeSetBad; 
 	[SerializeField] GameObject[] peopleChangeSetGood;
 	[SerializeField] bool space;
 	[SerializeField] GameObject[] spaceChangeSetBad;
@@ -29,6 +29,7 @@ public class Toggler : MonoBehaviour {
 	[SerializeField] GameObject[] warthChangeSetGood;
 	bool[] check = new bool[5];
 	bool hiding;
+	[SerializeField] GameObject[] OnlyVeiwHidden;
 	[HideInInspector]
 	public bool flipScene = false;
 	
@@ -62,7 +63,7 @@ public class Toggler : MonoBehaviour {
 			fire = !fire;
 			heights = !heights;
 			people = !people;
-			space = !space;
+			space = !space;			
 			hiding = InputController.hiding;
 		}
 		transform.position = Camera.main.transform.position;
@@ -78,6 +79,13 @@ public class Toggler : MonoBehaviour {
     public void ChangeScene()
     {
 		print("running this");
+		if(hiding)
+		{
+			Active(OnlyVeiwHidden);
+		}
+		else{
+			InActive(OnlyVeiwHidden);
+		}
         if(fire)
 		{
 			// Do fire things
