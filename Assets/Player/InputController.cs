@@ -7,6 +7,13 @@ public class InputController : MonoBehaviour {
     public static float hMove, vMove;
     public static bool hiding;
 
+    private PlayerController player;
+
+    private void Start() 
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
+
     private void Update()
     {
         InputCheck();
@@ -14,7 +21,7 @@ public class InputController : MonoBehaviour {
         if(Input.GetButtonUp("Hide"))
         {
             ToggleHide();
-        }
+        } 
 
         if(Input.GetButton("Interact"))
         {
@@ -33,9 +40,13 @@ public class InputController : MonoBehaviour {
         if(!hiding)
         {
             hiding = true;
+
         }
         else
         {
+            Quaternion rot = Quaternion.identity;
+            rot.eulerAngles = new Vector3(0, player.transform.rotation.eulerAngles.y, 0);
+            player.transform.rotation = rot;
             hiding = false;
         }
     }
