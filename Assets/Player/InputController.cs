@@ -45,8 +45,8 @@ public class InputController : MonoBehaviour {
         else
         {
             Quaternion rot = Quaternion.identity;
-            rot.eulerAngles = new Vector3(0, player.transform.rotation.eulerAngles.y, 0);
-            player.transform.rotation = rot;
+            rot.eulerAngles = new Vector3(0, Camera.main.transform.rotation.eulerAngles.y, 0);
+            Camera.main.transform.rotation = rot;
             hiding = false;
         }
     }
