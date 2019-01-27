@@ -198,7 +198,7 @@ public class Toggler : MonoBehaviour {
 
 	void SpawnFires()
 	{
-		Instantiate(fireWall, new Vector3(-2.77f, 0, 0), Quaternion.identity);
+		//Instantiate(fireWall, new Vector3(-2.77f, 0, 0), Quaternion.identity);
 		Instantiate(fireWall, new Vector3(1.6f, 0, -10.68f), Quaternion.identity);
 		Instantiate(fireWall, new Vector3(1.8f, 0, 10.40f), Quaternion.identity);
 	}
