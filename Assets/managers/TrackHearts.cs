@@ -7,15 +7,27 @@ public class TrackHearts : MonoBehaviour {
 
 public static int hearts;
 
+public Sprite halfheart;
+public Sprite fullheart;
+
+
 	// Use this for initialization
 	void Start () {
 		hearts = 0;
+		GetComponent<Image>().enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//replace this with heart images
-		Text heartCount = GetComponentInChildren<Text>();
-		heartCount.text = hearts.ToString();
+		if(hearts == 1)
+		{
+			GetComponent<Image>().enabled = true;
+			GetComponent<Image>().sprite = halfheart;
+		}
+
+		if(hearts == 2)
+		{
+			GetComponent<Image>().sprite = fullheart;
+		}
 	}
 }

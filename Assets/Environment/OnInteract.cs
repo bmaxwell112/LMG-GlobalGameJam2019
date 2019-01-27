@@ -23,6 +23,7 @@ public class OnInteract : MonoBehaviour {
 		if(interactions == Interactions.collect)
 		{
 			TrackHearts.hearts++;
+			print(TrackHearts.hearts);
 			Destroy(gameObject);
 		}
 
