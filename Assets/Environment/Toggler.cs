@@ -87,7 +87,7 @@ public class Toggler : MonoBehaviour {
 		else{
 			InActive(OnlyVeiwHidden);
 		}
-        if(fire)
+        if(!fire)
 		{
 			Active(fireChangeSetBad);
 			SpawnFires();
