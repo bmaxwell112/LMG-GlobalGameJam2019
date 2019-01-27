@@ -7,15 +7,25 @@ public class TrackHearts : MonoBehaviour {
 
 public static int hearts;
 
+
+
 	// Use this for initialization
 	void Start () {
 		hearts = 0;
+		// FindObjectOfType<heart1>().GetComponent<Renderer>().enabled = false;
+		// FindObjectOfType<heart2>().GetComponent<Renderer>().enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//replace this with heart images
-		Text heartCount = GetComponentInChildren<Text>();
-		heartCount.text = hearts.ToString();
+		if(hearts == 1)
+		{
+			// FindObjectOfType<heart1>().GetComponent<Renderer>().enabled = true;
+		}
+
+		if(hearts == 2)
+		{
+			// FindObjectOfType<heart2>().GetComponent<Renderer>().enabled = true;
+		}
 	}
 }

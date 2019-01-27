@@ -4430,6 +4430,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1860436145}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1923736409 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95116119074526152, guid: 7bc848e576f41634c842352550fca3ff,
+    type: 2}
+  m_PrefabInternal: {fileID: 788022602}
 --- !u!1 &1930640019
 GameObject:
   m_ObjectHideFlags: 0
@@ -5018,6 +5023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0affd77cc48104c1a964d562cf54a7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1923736409}
   good: {fileID: 8300000, guid: 3f588f5476ae14825a16bed3bd2c124d, type: 3}
   bad: {fileID: 8300000, guid: bcbfb03b542234abdac52a6752463fbf, type: 3}
   fire: 0
@@ -5049,6 +5055,7 @@ MonoBehaviour:
   warmth: 0
   warthChangeSetBad: []
   warthChangeSetGood: []
+  flipScene: 0
 --- !u!4 &2107566754
 Transform:
   m_ObjectHideFlags: 0

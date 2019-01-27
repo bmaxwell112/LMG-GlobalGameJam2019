@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3103,6 +3103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0affd77cc48104c1a964d562cf54a7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95116119074526152, guid: 7bc848e576f41634c842352550fca3ff, type: 2}
+  good: {fileID: 0}
+  bad: {fileID: 0}
   fire: 0
   fireChangeSetBad: []
   fireChangeSetGood: []
@@ -3131,6 +3134,7 @@ MonoBehaviour:
   warmth: 0
   warthChangeSetBad: []
   warthChangeSetGood: []
+  flipScene: 0
 --- !u!4 &2107566754
 Transform:
   m_ObjectHideFlags: 0
