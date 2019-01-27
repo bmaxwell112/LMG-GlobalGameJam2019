@@ -108,6 +108,6 @@ public Sprite image1, image2, image3, image4;
 		shown = true;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
-
+		
 	}
 }

@@ -25,15 +25,28 @@ public class Toggler : MonoBehaviour {
 	[SerializeField] GameObject[] warthChangeSetBad;
 	[SerializeField] GameObject[] warthChangeSetGood;
 	bool[] check = new bool[5];
+	bool hiding;
 
 	void Start()
 	{
+		fire = QuestionController.Fire;
+		heights = QuestionController.Heights;
+		people = QuestionController.People;
+		space = QuestionController.Spaces;
 		ChangeScene();
 	}
 
 	void Update(){
 		if(DetectBoolChange()){
 			ChangeScene();
+		}
+		if(hiding != InputController.hiding)
+		{
+			fire = !fire;
+			heights = !heights;
+			people = !people;
+			space = !space;
+			hiding = InputController.hiding;
 		}
 	}
 
@@ -44,7 +57,7 @@ public class Toggler : MonoBehaviour {
 		{
 			// Do fire things
 		}
-		if(heights)
+		if(!heights)
         {
             // Normal
             Active(heightChangeSetBad);
@@ -61,7 +74,7 @@ public class Toggler : MonoBehaviour {
 
     private void CheckSpace()
     {
-        if (space)
+        if (!space)
         {
             heightChangeSetBad[0].SetActive(false);
             heightChangeSetBad[2].SetActive(false);
