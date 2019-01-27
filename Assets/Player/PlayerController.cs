@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour {
         {
             if(hit.transform.tag == "Interact" && Input.GetButtonUp("Interact"))
             {
-                print("I used the object.");
+                hit.collider.gameObject.GetComponent<OnInteract>().PerformInteraction();
             }
         }
     }
