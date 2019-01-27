@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/_Scene/game/02a Choices.unity
     guid: 4d1cd028f6bf942b5bc309a37717d8f5
   - enabled: 1
-    path: Assets/_Scene/game/02b_Game2.unity
-    guid: 7d9a97baa66cf6540a4ad2be003c7830
+    path: Assets/_Scene/game/02b TheGame.unity
+    guid: a0cb6d2e8aa674418a5537c10f7d4176
   m_configObjects: {}
